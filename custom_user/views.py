@@ -45,7 +45,7 @@ def signup(request):
                 homepage=data['homepage'],
                 age=data['age']
             )
-            return HttpResponseRedirect(reverse('homepage'))
+            return HttpResponseRedirect(reverse('home'))
 
     form = SignUpForm()
     return render(request, html, {'form': form})
