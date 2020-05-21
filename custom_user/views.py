@@ -11,6 +11,7 @@ def index(request):
 
 def signin(request):
     html = 'generic_form.html'
+    
     if request.method == 'POST':
         form = SignInForm(request.POST)
         if form.is_valid():
