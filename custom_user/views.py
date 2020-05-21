@@ -1,4 +1,4 @@
-from django.shortcuts import render, reverse, HTTPResponseRedirect
+from django.shortcuts import render, reverse, HttpResponseRedirect
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
 
@@ -21,7 +21,7 @@ def signin(request):
             if user:
                 login(request, user)
                 return HttpResponseRedirect(
-                    request.GET.get('next', reverse('homepage'))
+                    request.GET.get('next', reverse('home'))
                 )
     form = SignInForm()
     return render(request, html, {'form': form})
