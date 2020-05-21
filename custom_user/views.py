@@ -29,7 +29,7 @@ def signin(request):
 
 def signout(request):
     logout(request)
-    return HttpResponseRedirect(reverse('homepage'))
+    return HttpResponseRedirect(reverse('home'))
 
 def signup(request):
     html = 'generic_form.html'
