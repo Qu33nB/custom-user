@@ -4,10 +4,13 @@ from django.contrib.auth.decorators import login_required
 
 from custom_user.models import CustomUser
 from custom_user.forms import SignInForm, SignUpForm
+from customUser import settings
+
 # Create your views here.
 @login_required
 def index(request):
-    return render(request, 'index.html')
+    info = settings.AUTH_USER_MODEL
+    return render(request, 'index.html', {'info': info})
 
 def signin(request):
     html = 'generic_form.html'
